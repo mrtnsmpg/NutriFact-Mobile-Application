@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:text="Fruit Nutition Checker"
         android:textColor="@color/white"
+        android:textSize="14dp"
         android:fontFamily="@font/barlow_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

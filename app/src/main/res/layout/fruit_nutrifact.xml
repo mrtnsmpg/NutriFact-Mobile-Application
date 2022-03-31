@@ -68,11 +68,14 @@
 
     <Button
         android:id="@+id/btnNutrifact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120sp"
+        android:layout_height="45dp"
         android:background="@drawable/btn"
         app:backgroundTint="@color/red"
         android:text="Nutrifact"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.251"
@@ -82,11 +85,13 @@
 
     <Button
         android:id="@+id/btnInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="72dp"
         app:backgroundTint="@color/white"
         android:text="Information"
+        android:textSize="18sp"
+        android:gravity="center"
         android:textColor="@color/black"
         android:background="@drawable/btn"
         app:layout_constraintBottom_toBottomOf="parent"
