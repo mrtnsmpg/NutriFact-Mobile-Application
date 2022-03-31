@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
-
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_bold"
                     android:text="Carbs" />
 
@@ -152,6 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_bold"
                     android:gravity="right"
                     android:paddingEnd="15dp"
@@ -163,6 +164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Sodium" />
 
@@ -175,6 +177,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="1 mg" />
             </TableRow>
 
@@ -188,6 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Dietary Fiber" />
 
@@ -201,6 +205,7 @@
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="4 g" />
 
                 <TextView
@@ -209,6 +214,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Potassium" />
 
@@ -235,6 +241,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Sugar"
+                    android:textSize="12sp"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -247,6 +254,7 @@
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="18 g" />
 
                 <TextView
@@ -255,6 +263,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Cholesterol" />
 
@@ -267,6 +276,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="0 mg" />
             </TableRow>
 
@@ -282,6 +292,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_bold"
                     android:text="Fat" />
 
@@ -297,6 +308,7 @@
                     android:fontFamily="@font/barlow_bold"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="0 g" />
 
                 <TextView
@@ -306,6 +318,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Vitamin A" />
 
@@ -319,6 +332,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="5 %" />
             </TableRow>
 
@@ -332,6 +346,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Saturated" />
 
@@ -344,6 +359,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:paddingEnd="15dp"
                     android:text="0 g" />
 
@@ -353,6 +369,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Vitamin C" />
 
@@ -365,6 +382,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="8 %" />
             </TableRow>
 
@@ -378,6 +396,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Polyunsaturated" />
 
@@ -391,6 +410,7 @@
                     android:gravity="right"
                     android:paddingEnd="15dp"
                     android:text="0 g"
+                    android:textSize="12sp"
                     android:textColor="@color/white" />
 
                 <TextView
@@ -399,6 +419,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Calcium" />
 
@@ -411,6 +432,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="10 %" />
             </TableRow>
 
@@ -424,6 +446,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Monounsaturated" />
 
@@ -437,6 +460,7 @@
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="0 g" />
 
                 <TextView
@@ -445,6 +469,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Iron" />
 
@@ -457,6 +482,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
+                    android:textSize="12sp"
                     android:text="0 %" />
             </TableRow>
 
@@ -470,6 +496,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="2.5dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_regular"
                     android:text="Trans" />
 
@@ -483,6 +510,7 @@
                     android:fontFamily="@font/barlow_regular"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="0 g" />
 
                 <TextView
@@ -515,6 +543,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
+                    android:textSize="12sp"
                     android:fontFamily="@font/barlow_bold"
                     android:text="Protein" />
 
@@ -529,6 +558,7 @@
                     android:fontFamily="@font/barlow_bold"
                     android:gravity="right"
                     android:paddingEnd="15dp"
+                    android:textSize="12sp"
                     android:text="0 g" />
 
                 <TextView

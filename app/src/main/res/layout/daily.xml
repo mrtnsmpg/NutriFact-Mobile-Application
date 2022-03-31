@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="409dp"
@@ -30,6 +31,7 @@
             android:layout_gravity="center"
             android:fontFamily="@font/barlow_bold"
             android:text="000"
+            android:textColor="@color/green"
             android:textSize="36sp" />
 
         <TextView
@@ -53,7 +55,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="45dp"
                 android:layout_marginTop="10sp"
-                android:background="@color/green"
+                android:backgroundTint="@color/green"
                 app:cardCornerRadius="12dp" />
 
             <androidx.cardview.widget.CardView
@@ -62,7 +64,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10sp"
-                android:background="#6AD139"
+                android:backgroundTint="@color/green"
                 app:cardCornerRadius="12dp" />
 
             <androidx.cardview.widget.CardView
@@ -71,7 +73,7 @@
                 android:layout_height="100dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="10sp"
-                android:background="#6AD139"
+                android:backgroundTint="@color/green"
                 app:cardCornerRadius="12dp" />
         </LinearLayout>
 
@@ -89,7 +91,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/barlow_semibold"
                 android:text="Monday\nTuesday\nWednesday\nThursday\nFriday"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
