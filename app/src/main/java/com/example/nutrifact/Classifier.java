@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -30,6 +31,7 @@ import org.tensorflow.lite.support.image.ops.ResizeOp;
 import org.tensorflow.lite.support.image.ops.ResizeWithCropOrPadOp;
 import org.tensorflow.lite.support.label.TensorLabel;
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+import org.w3c.dom.Text;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -39,11 +41,12 @@ import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 public class Classifier extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
     ImageView imageView;
-    TextView textFruitName, textFruitQuality, headCal, headCarbs, headFat, headProtein;
+    TextView textFruitName, headCal, headCarbs, headFat, headProtein;
     TextView textCarbs, textDFiber, textSugar, textFat, textSaturated, textPUnsaturated, textMUnsaturated, textTrans, textProtein, textSodium, textPotassium, textCholesterol, textVitaminA, textVitaminC, textCalcium, textIron;
     Spinner fruitSizes;
     Bitmap imageBitmap;
@@ -62,21 +65,32 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
     private static final float PROBABILITY_STD = 255.0f;
     private List<String> labels;
 
-
+    String message;
     String fruitKey;
     List<String> spinnerItems = new ArrayList<>();
     List<Map<String,String>> selectedValue = new ArrayList<>();
     List<List<String>> nutritionalValues = new ArrayList<>();
-
+    TextToSpeech tts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_classifier);
+        setContentView(R.layout.fruit_nutrifact);
+
+        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status==TextToSpeech.SUCCESS){
+                    tts.setLanguage(Locale.US);
+                    tts.setSpeechRate(0.7f);
+                    tts.speak(message, TextToSpeech.QUEUE_ADD, null);
+                }
+            }
+        });
+
 
 
         imageView = findViewById(R.id.showImage);
         textFruitName = findViewById(R.id.fruitName);
-        textFruitQuality = findViewById(R.id.fruitQuality);
         headCal = findViewById(R.id.headCal);
         headCarbs = findViewById(R.id.headCarbs);
         headFat = findViewById(R.id.headFat);
@@ -199,52 +213,52 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
                     case "Apple Washington":
                         fruitName = "apple washington";
                         textFruitName.setText("Washington Apple");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is washington apple. It is good for jabols.";
                         break;
                     case "Apple Fuji":
                         fruitName = "apple fuji";
                         textFruitName.setText("Fuji Apple");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is fuji apple. It is good for jabols.";
                         break;
                     case "Banana Lakatan":
                         fruitName = "banana lakatan";
                         textFruitName.setText("Lakatan");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is lakatan. A kind of banana. It is good for jabols.";
                         break;
                     case "Banana Latundan":
                         fruitName = "banana latundan";
                         textFruitName.setText("Latundan");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is latundan. A kind of banana. It is good for jabols.";
                         break;
                     case "Banana Saba":
                         fruitName = "banana saba";
                         textFruitName.setText("Saba");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is saba. A kind of banana. It is good for jabols.";
                         break;
                     case "Mango Carabao":
                         fruitName = "mango carabao";
                         textFruitName.setText("Carabao Mango");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is carabao mango. It is good for jabols.";
                         break;
                     case "Mango Indian":
                         fruitName = "mango indian";
                         textFruitName.setText("Indian Mango");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is indian mango. It is good for jabols.";
                         break;
                     case "Orange":
                         fruitName = "orange";
                         textFruitName.setText("Orange");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is orange. It is good for jabols.";
                         break;
                     case "Pineapple":
                         fruitName = "pineapple";
                         textFruitName.setText("Pineapple");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is pineapple. It is good for jabols.";
                         break;
                     case "Watermelon":
                         fruitName = "watermelon";
                         textFruitName.setText("Watermelon");
-                        textFruitQuality.setText("Fresh");
+                        message = "This is watermelon. It is good for jabols.";
                         break;
                 }
                 nutritionalValues = getNutritionalValue(fruitName);
@@ -288,10 +302,10 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
                 textVitaminC.setText(nutritionalValues.get(i).get(14) + " %");
                 textCalcium.setText(nutritionalValues.get(i).get(15) + " %");
                 textIron.setText(nutritionalValues.get(i).get(16) + " %");
-                headCal.setText(nutritionalValues.get(i).get(17));
+                /*headCal.setText(nutritionalValues.get(i).get(17));
                 headProtein.setText(nutritionalValues.get(i).get(9) + "g");
                 headFat.setText(nutritionalValues.get(i).get(4) + "g");
-                headCarbs.setText(nutritionalValues.get(i).get(1) + "g");
+                headCarbs.setText(nutritionalValues.get(i).get(1) + "g");*/
             }
         }
 
