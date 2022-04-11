@@ -213,52 +213,52 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
                     case "Apple Washington":
                         fruitName = "apple washington";
                         textFruitName.setText("Washington Apple");
-                        message = "This is washington apple. It is good for jabols.";
+                        message = "This is washington apple. Hi Stephany, I love you.";
                         break;
                     case "Apple Fuji":
                         fruitName = "apple fuji";
                         textFruitName.setText("Fuji Apple");
-                        message = "This is fuji apple. It is good for jabols.";
+                        message = "This is fuji apple. Hi Stephany, I love you.";
                         break;
                     case "Banana Lakatan":
                         fruitName = "banana lakatan";
                         textFruitName.setText("Lakatan");
-                        message = "This is lakatan. A kind of banana. It is good for jabols.";
+                        message = "This is lakatan. A kind of banana. Hi Stephany, I love you.";
                         break;
                     case "Banana Latundan":
                         fruitName = "banana latundan";
                         textFruitName.setText("Latundan");
-                        message = "This is latundan. A kind of banana. It is good for jabols.";
+                        message = "This is latundan. A kind of banana. Hi Stephany, I love you.";
                         break;
                     case "Banana Saba":
                         fruitName = "banana saba";
                         textFruitName.setText("Saba");
-                        message = "This is saba. A kind of banana. It is good for jabols.";
+                        message = "This is saba. A kind of banana. Hi Stephany, I love you.";
                         break;
                     case "Mango Carabao":
                         fruitName = "mango carabao";
                         textFruitName.setText("Carabao Mango");
-                        message = "This is carabao mango. It is good for jabols.";
+                        message = "This is carabao mango. Hi Stephany, I love you.";
                         break;
                     case "Mango Indian":
                         fruitName = "mango indian";
                         textFruitName.setText("Indian Mango");
-                        message = "This is indian mango. It is good for jabols.";
+                        message = "This is indian mango. Hi Stephany, I love you.";
                         break;
                     case "Orange":
                         fruitName = "orange";
                         textFruitName.setText("Orange");
-                        message = "This is orange. It is good for jabols.";
+                        message = "This is orange. Hi Stephany, I love you.";
                         break;
                     case "Pineapple":
                         fruitName = "pineapple";
                         textFruitName.setText("Pineapple");
-                        message = "This is pineapple. It is good for jabols.";
+                        message = "This is pineapple. Hi Stephany, I love you.";
                         break;
                     case "Watermelon":
                         fruitName = "watermelon";
                         textFruitName.setText("Watermelon");
-                        message = "This is watermelon. It is good for jabols.";
+                        message = "This is watermelon. Hi Stephany, I love you.";
                         break;
                 }
                 nutritionalValues = getNutritionalValue(fruitName);
