@@ -82,6 +82,7 @@ public class Camera extends AppCompatActivity {
     TextureView cameraFrame;
     String currentImagePath;
     Uri imageUri;
+    private ImageReader reader;
     public static final int CAMERA_REQUEST_CODE = 102;
 
     private static final SparseIntArray ORIENTATIONS = new SparseIntArray();
@@ -269,7 +270,7 @@ public class Camera extends AppCompatActivity {
             height = jpegSizes[0].getHeight();
         }
 
-        ImageReader reader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 1);
+        reader = ImageReader.newInstance(width, height, ImageFormat.JPEG, 1);
         List<Surface> outputSurfaces = new ArrayList<>(2);
         outputSurfaces.add(reader.getSurface());
         outputSurfaces.add(new Surface(cameraFrame.getSurfaceTexture()));
@@ -298,6 +299,7 @@ public class Camera extends AppCompatActivity {
         }*/
 
         Log.i("SAMPLE", storageDir.toString());
+        Log.i("SAMPLE", android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R ? "TRUE" : "FALSE");
 
         if(!storageDir.isDirectory()) {
             storageDir.mkdirs();
@@ -309,10 +311,11 @@ public class Camera extends AppCompatActivity {
             @Override
             public void onImageAvailable(ImageReader reader) {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                    String imageFileName = "JPEG_" + timeStamp + "_";
-                    Log.i("SEND", "ASDASDDADA");
+                String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                String imageFileName = "JPEG_" + timeStamp + "_";
+                Log.i("SAMPLE", "ASDASDDADA");
+                if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R){
+
                     ContentResolver resolver = getContentResolver();
                     ContentValues contentValues = new ContentValues();
                     contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName + ".jpg");
@@ -360,8 +363,6 @@ public class Camera extends AppCompatActivity {
 
 
                 } else {
-                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-                    String imageFileName = "JPEG_" + timeStamp + "_";
                     try {
                         file = File.createTempFile(
                                 imageFileName,  // prefix
