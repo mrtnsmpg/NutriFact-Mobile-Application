@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,10 +31,13 @@ import android.hardware.camera2.params.StreamConfigurationMap;
 import android.media.Image;
 import android.media.ImageReader;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.MotionEvent;
@@ -68,6 +73,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Camera extends AppCompatActivity {
@@ -99,6 +105,12 @@ public class Camera extends AppCompatActivity {
     Handler backgroundHandler;
     HandlerThread backgroundThread;
 
+    Uri fileUri;
+    Bitmap imageBitmap;
+
+    public Camera() {
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,8 +137,9 @@ public class Camera extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 101){
-            if(grantResults[0] == PackageManager.PERMISSION_DENIED){
+
+        if (requestCode == 101) {
+            if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                 Toast.makeText(getApplicationContext(), "Sorry, camera permission is needed.", Toast.LENGTH_LONG).show();
                 //finish();
             }
@@ -271,58 +284,129 @@ public class Camera extends AppCompatActivity {
 
 //        Long tsLong = System.currentTimeMillis()/1000;
 //        String ts = tsLong.toString();
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
+
 
 //        file = new File(Environment.getExternalStorageDirectory() + "/"+ts+".jpg");
 
-        File storageDir = new File(Environment.getExternalStorageDirectory().toString(), "captures/fruits/");
+        File storageDir = new File(getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES).toString(),"fruits/");
+        /*if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+            storageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString(), "fruits/");
+
+        }else{
+            storageDir = new File(Environment.getExternalStorageDirectory().toString(), "Pictures/fruits/");
+
+        }*/
+
+        Log.i("SAMPLE", storageDir.toString());
+
         if(!storageDir.isDirectory()) {
             storageDir.mkdirs();
         }
-        file = File.createTempFile(
-                imageFileName,  // prefix
-                ".jpg",         // suffix
-                storageDir      // directory
-        );
 
-        final Uri fileUri = FileProvider.getUriForFile(this,
-                "com.example.nutrifact",
-                file);
+
 
         ImageReader.OnImageAvailableListener readerListener = new ImageReader.OnImageAvailableListener() {
             @Override
             public void onImageAvailable(ImageReader reader) {
-                Image image = null;
-                image = reader.acquireLatestImage();
-                ByteBuffer buffer = image.getPlanes()[0].getBuffer();
-                byte[] bytes = new byte[buffer.capacity()];
-                buffer.get(bytes);
 
-                try {
-                    save(bytes);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }finally {
-                    if(image != null){
-                        image.close();
-                    }
-                }
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                    String imageFileName = "JPEG_" + timeStamp + "_";
+                    Log.i("SEND", "ASDASDDADA");
+                    ContentResolver resolver = getContentResolver();
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, imageFileName + ".jpg");
+                    contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg");
+                    contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, getApplicationContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES) + File.separator + "fruits");
+                    Uri imageUri = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
 
+                    try{
+                        Image image = null;
+                        image = reader.acquireLatestImage();
+                        ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                        byte[] bytes = new byte[buffer.capacity()];
+                        buffer.get(bytes);
 
-                OutputStream output = null;
-                try {
-                    output = getContentResolver().openOutputStream(fileUri);
-                    output.write(bytes);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } finally {
-                    image.close();
-                    if (output != null) {
                         try {
-                            output.close();
+                            save(bytes);
                         } catch (IOException e) {
                             e.printStackTrace();
+                        } finally {
+                            if (image != null) {
+                                image.close();
+                            }
+                        }
+
+
+                        OutputStream output = null;
+                        try {
+                            output = getContentResolver().openOutputStream(fileUri);
+                            output.write(bytes);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } finally {
+                            image.close();
+                            if (output != null) {
+                                try {
+                                    output.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                    }catch (Exception e){
+                       e.printStackTrace();
+                    }
+
+
+                } else {
+                    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+                    String imageFileName = "JPEG_" + timeStamp + "_";
+                    try {
+                        file = File.createTempFile(
+                                imageFileName,  // prefix
+                                ".jpg",         // suffix
+                                storageDir      // directory
+                        );
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    fileUri = FileProvider.getUriForFile(getApplicationContext(),
+                            "com.example.nutrifact",
+                            file);
+
+                    Image image = null;
+                    image = reader.acquireLatestImage();
+                    ByteBuffer buffer = image.getPlanes()[0].getBuffer();
+                    byte[] bytes = new byte[buffer.capacity()];
+                    buffer.get(bytes);
+
+                    try {
+                        save(bytes);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (image != null) {
+                            image.close();
+                        }
+                    }
+
+
+                    OutputStream output = null;
+                    try {
+                        output = getContentResolver().openOutputStream(fileUri);
+                        output.write(bytes);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        image.close();
+                        if (output != null) {
+                            try {
+                                output.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }
@@ -330,15 +414,18 @@ public class Camera extends AppCompatActivity {
         };
 
         reader.setOnImageAvailableListener(readerListener, backgroundHandler);
+
+
         final CameraCaptureSession.CaptureCallback captureListener = new CameraCaptureSession.CaptureCallback() {
             @Override
             public void onCaptureCompleted(CameraCaptureSession session, CaptureRequest request, TotalCaptureResult result) {
                 super.onCaptureCompleted(session, request, result);
 
                 Toast.makeText(getApplicationContext(), "Image saved.", Toast.LENGTH_SHORT).show();
-                Intent classifier = new Intent(getApplicationContext(), Classifier.class);
+
+              /*  Intent classifier = new Intent(getApplicationContext(), Classifier.class);
                 classifier.putExtra("FILE_URI", fileUri);
-                startActivity(classifier);
+                startActivity(classifier);*/
                 try {
                     createCameraPreview();
                 } catch (CameraAccessException e) {
