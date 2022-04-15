@@ -65,7 +65,7 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
     private static final float PROBABILITY_STD = 255.0f;
     private List<String> labels;
 
-    String message;
+    String message = "test";
     String fruitKey;
     List<String> spinnerItems = new ArrayList<>();
     List<Map<String,String>> selectedValue = new ArrayList<>();
@@ -75,17 +75,6 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fruit_nutrifact);
-
-        tts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status==TextToSpeech.SUCCESS){
-                    tts.setLanguage(Locale.US);
-                    tts.setSpeechRate(0.7f);
-                    tts.speak(message, TextToSpeech.QUEUE_ADD, null);
-                }
-            }
-        });
 
 
 
@@ -135,6 +124,16 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
         }
 
         predictImage(imageBitmap);
+
+
+        tts = new TextToSpeech(getApplicationContext(), status -> {
+            if(status != TextToSpeech.ERROR){
+                tts.setLanguage(Locale.getDefault());
+                tts.speak(message, TextToSpeech.QUEUE_FLUSH, null, null);
+            }
+        });
+
+
 
 
     }
