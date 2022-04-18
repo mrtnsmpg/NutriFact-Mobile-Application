@@ -1,6 +1,7 @@
 package com.example.nutrifact;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -50,6 +51,7 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
     TextView textCarbs, textDFiber, textSugar, textFat, textSaturated, textPUnsaturated, textMUnsaturated, textTrans, textProtein, textSodium, textPotassium, textCholesterol, textVitaminA, textVitaminC, textCalcium, textIron;
     Spinner fruitSizes;
     Bitmap imageBitmap;
+    TextView cameraBtn;
 
 
     protected Interpreter tflite;
@@ -76,7 +78,15 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fruit_nutrifact);
 
-
+        cameraBtn = findViewById(R.id.btnCamera);
+        cameraBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Classifier.this,CameraX.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         imageView = findViewById(R.id.showImage);
         textFruitName = findViewById(R.id.fruitName);
@@ -269,8 +279,8 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
                         spinnerItems.add(nutritionalValues.get(i).get(0));
                     }
 
-                    ArrayAdapter aa = new ArrayAdapter(this, android.R.layout.simple_list_item_1, spinnerItems);
-                    aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    ArrayAdapter aa = new ArrayAdapter(this, R.layout.custom_spinner, spinnerItems);
+                    aa.setDropDownViewResource(R.layout.custom_spinner_background);
                     fruitSizes.setAdapter(aa);
                 }
             }
@@ -301,10 +311,10 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
                 textVitaminC.setText(nutritionalValues.get(i).get(14) + " %");
                 textCalcium.setText(nutritionalValues.get(i).get(15) + " %");
                 textIron.setText(nutritionalValues.get(i).get(16) + " %");
-                /*headCal.setText(nutritionalValues.get(i).get(17));
+                headCal.setText(nutritionalValues.get(i).get(17));
                 headProtein.setText(nutritionalValues.get(i).get(9) + "g");
                 headFat.setText(nutritionalValues.get(i).get(4) + "g");
-                headCarbs.setText(nutritionalValues.get(i).get(1) + "g");*/
+                headCarbs.setText(nutritionalValues.get(i).get(1) + "g");
             }
         }
 

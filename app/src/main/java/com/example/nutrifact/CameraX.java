@@ -214,7 +214,7 @@ public class CameraX extends AppCompatActivity implements View.OnClickListener, 
                 new ImageCapture.OnImageSavedCallback() {
                     @Override
                     public void onImageSaved(@NonNull ImageCapture.OutputFileResults outputFileResults) {
-                        Toast.makeText(getApplicationContext(), "Successfuly saved", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Processing...", Toast.LENGTH_SHORT).show();
                         Intent classifier = new Intent(getApplicationContext(), Classifier.class);
                         classifier.putExtra("FILE_URI", outputFileResults.getSavedUri());
                         startActivity(classifier);
@@ -222,7 +222,7 @@ public class CameraX extends AppCompatActivity implements View.OnClickListener, 
 
                     @Override
                     public void onError(@NonNull ImageCaptureException exception) {
-                        Toast.makeText(getApplicationContext(), "Image saving failed: " + exception.getMessage() , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Capture Failed: " + exception.getMessage() , Toast.LENGTH_SHORT).show();
 
                     }
                 }

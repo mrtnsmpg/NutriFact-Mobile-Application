@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,CameraX.class);
+                Intent intent = new Intent(MainActivity.this,WelcomeScreen.class);
                 startActivity(intent);
                 finish();
             }

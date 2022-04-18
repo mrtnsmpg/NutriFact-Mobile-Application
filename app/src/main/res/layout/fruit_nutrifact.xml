@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/green">
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="280dp"
-        android:layout_height="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.475"
-        app:srcCompat="@drawable/btn_holder" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -35,15 +23,20 @@
             android:layout_marginTop="220dp"
             app:srcCompat="@drawable/header" />
 
-        <ImageView
-            android:id="@+id/btnBack"
+        <TextView
+            android:id="@+id/btnCamera"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="-280dp"
-            app:srcCompat="@drawable/back_icon" />
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="-300dp"
+            android:fontFamily="@font/fa_solid"
+            android:text="\uf030"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textColor="@color/green"/>
 
         <ImageView
+            android:layout_marginTop="20dp"
             android:id="@+id/showImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -62,10 +55,19 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
 
-
-
-
     </LinearLayout>
+
+    <!--<ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475"
+        app:srcCompat="@drawable/btn_holder" />
 
     <Button
         android:id="@+id/btnNutrifact"
@@ -101,6 +103,124 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.027" />
 
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNutritionaFacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TableRow>
+
+
+                <TextView
+                    android:id="@+id/headCal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:gravity="center"
+                    android:text="45"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+
+                <TextView
+                    android:id="@+id/headCarbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="center"
+                    android:text="11g"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/headFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="center"
+                    android:text="0g"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/headProtein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="center"
+                    android:text="0g"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="center"
+                    android:text="Cal"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="center"
+                    android:text="Carbs"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="center"
+                    android:text="Fat"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="center"
+                    android:text="Protein"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/txtNutritionaFacts"
@@ -114,495 +234,516 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.207" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/barlow_bold"
         android:text="Serving Size"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNutritionaFacts"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintVertical_bias="0.291" />
 
     <Spinner
         android:id="@+id/servingSize"
         android:layout_width="160dp"
         android:layout_height="27dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/circular_box"
-        android:fontFamily="@font/barlow_semibold"
-        android:textColor="#000"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        android:spinnerMode="dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toEndOf="@+id/textView8"
         app:layout_constraintTop_toBottomOf="@+id/txtNutritionaFacts"
-        app:layout_constraintVertical_bias="0.833" />
+        app:layout_constraintVertical_bias="0.067" />
 
-    <TableLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/servingSize"
+        app:layout_constraintVertical_bias="0.133">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp">
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:text="Carbs"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textCarbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="25 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Sodium"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textSodium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="1 mg"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Dietary Fiber"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textDFiber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="4 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Potassium"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textPotassium"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="194 mg"
+                    android:textColor="@color/white" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Sugar"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textSugar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="18 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Cholesterol"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textCholesterol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="0 mg"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:text="Fat"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textFat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Vitamin A"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textVitaminA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="5 %"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Saturated"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textSaturated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Vitamin C"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textVitaminC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="8 %"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Polyunsaturated"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textPUnsaturated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Calcium"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textCalcium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="10 %"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Monounsaturated"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textMUnsaturated"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Iron"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textIron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:text="0 %"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Trans"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textTrans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_regular"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="2.5dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text=""
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="2dp"
+                android:background="@color/green">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:text="Protein"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textProtein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/barlow_bold"
+                    android:gravity="right"
+                    android:paddingEnd="15dp"
+                    android:text="0 g"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text=""
+                    android:textStyle="bold" />
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:background="#f1f1f1"
+        android:textColor="@color/white"
+        android:fontFamily="@font/barlow_regular"
+        android:textAlignment="center"
+        android:text="Percentages are based on a diet of 2000 calories a day."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/servingSize">
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
 
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:text="Carbs"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textCarbs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="25 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Sodium"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textSodium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="1 mg"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Dietary Fiber"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textDFiber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="4 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Potassium"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textPotassium"
-                android:layout_width="64dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="194 mg"
-                android:textColor="@color/white" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Sugar"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textSugar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="18 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Cholesterol"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textCholesterol"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="0 mg"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:text="Fat"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textFat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Vitamin A"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textVitaminA"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="5 %"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Saturated"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textSaturated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Vitamin C"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textVitaminC"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="8 %"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Polyunsaturated"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textPUnsaturated"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Calcium"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textCalcium"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="10 %"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Monounsaturated"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textMUnsaturated"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Iron"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textIron"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:text="0 %"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:text="Trans"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textTrans"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_regular"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="2.5dp"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text=""
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_marginBottom="2dp"
-            android:background="@color/green">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:text="Protein"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textProtein"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/barlow_bold"
-                android:gravity="right"
-                android:paddingEnd="15dp"
-                android:text="0 g"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text=""
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="right"
-                android:text=""
-                android:textStyle="bold" />
-        </TableRow>
-
-    </TableLayout>
+    </TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

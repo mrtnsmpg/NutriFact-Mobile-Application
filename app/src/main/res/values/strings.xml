@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Nutrifact</string>
+
+    <string name="slide1">"Nutrifact is a fruit nutrition chechek mobile application\n
+        that used to assist fruit consumers in identifying fruit\n
+        variety and know its nutritional information. This application\n
+        uses image recognition for capturing fruit indentity. Let's get\n
+        healthy together so we can live forever!"</string>
+
+    <string name="slide2">To get started, you have to place your
+        fruit to your palm and bring out the
+        NutriFact application. Once you are
+        on a camera page, just click the shutter
+        button and learn more about the fruits.</string>
+
+    <string name="slide3">After capturing your fruit,
+        the application will give you fruit nutritional information.
+        You  will also know some of the fruit identification name and textures. </string>
 </resources>

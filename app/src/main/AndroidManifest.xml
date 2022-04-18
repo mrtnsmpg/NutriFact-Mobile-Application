@@ -37,6 +37,10 @@
             android:name=".CameraX"
             android:exported="false" />
         <activity
+            android:name=".WelcomeScreen"
+            android:exported="false" />
+
+        <activity
             android:name=".Classifier"
             android:exported="false" />
         <activity android:name=".MainActivity">
@@ -46,7 +50,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Camera" />
     </application>
 
 </manifest>
