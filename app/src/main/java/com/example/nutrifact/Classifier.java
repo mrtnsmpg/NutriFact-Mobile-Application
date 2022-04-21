@@ -188,7 +188,7 @@ public class Classifier extends AppCompatActivity implements AdapterView.OnItemS
     }
 
     private MappedByteBuffer loadmodelfile(Activity activity) throws IOException {
-        AssetFileDescriptor fileDescriptor=activity.getAssets().openFd("thesis3.tflite");
+        AssetFileDescriptor fileDescriptor=activity.getAssets().openFd("thesis4.tflite");
         FileInputStream inputStream=new FileInputStream(fileDescriptor.getFileDescriptor());
         FileChannel fileChannel=inputStream.getChannel();
         long startoffset = fileDescriptor.getStartOffset();
